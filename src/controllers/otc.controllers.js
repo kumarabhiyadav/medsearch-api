@@ -11,3 +11,16 @@ exports.searchOTC = async function (req, res)  {
         
     }
 };
+
+
+exports.fetchOTC = async function (req, res)  {
+    try {
+        
+        const result = await otc.find({});
+        res.status(200).json({ success: true, count:result.length,result});
+    } catch (error) {
+        console.log(error);
+        res.status(200).json({ success: false, error });
+        
+    }
+};

@@ -1,9 +1,11 @@
 const express =  require('express');
-const {searchDrugs} = require('../controllers/drugs.controllers');
+const {searchDrugs,fetchDrugs} = require('../controllers/drugs.controllers');
 
 
 router = express.Router();
 router.post('/searchDrugs',searchDrugs);
+
+router.post('/fetchDrugs',fetchDrugs);
 
 
 
