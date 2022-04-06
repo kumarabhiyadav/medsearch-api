@@ -15,8 +15,10 @@ const PORT = 3000;
 
 
 
-const drugs= require('./routes/drugs.routes');
-const otc= require('./routes/otc.routes');
+const drugs = require('./routes/drugs.routes');
+const otc = require('./routes/otc.routes');
+const user = require('./routes/user.routes');
+
 
 const app = express();
 app.use(express.json());
@@ -31,5 +33,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/drugs', drugs);
-app.use('/api/otc',otc);
+app.use('/api/otc', otc);
+app.use('/api/user', user);
+
 const server = app.listen(PORT, console.log(`Server Listening on : ${PORT}`));
